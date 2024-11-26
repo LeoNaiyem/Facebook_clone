@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  transition: 0.2s ease-in-out;
 }
 body {
   font-family: Segoe UI Historic, Segoe UI, Helvetica, Arial, sans-serif;
@@ -13,8 +14,35 @@ a {
 ul {
   list-style: none;
 }
+/* custom scrollbar starts */
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px #252525;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: skyblue;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #0149bd;
+}
+/* custom scrollbar ends */
 .container {
 }
+/* .fixed_width {
+  width: 1250px;
+  position: relative;
+} */
 .row {
   width: 100%;
   padding: 0.5rem 1rem;
@@ -30,7 +58,13 @@ ul {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 40px;
+  max-width: 1250px;
+  position: relative;
+}
+.nav_group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 /* customized  */
 .nav_left {
@@ -183,6 +217,143 @@ ul {
     }
   }
 }
+/* account settings options starts */
+.account_settings {
+  box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: 38px;
+  right: 0px;
+  width: 300px;
+  background: white;
+  padding: 10px;
+  border-radius: 5px;
+  visibility: hidden;
+}
+.profile_settings {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 5px;
+  border-radius: 10px;
+  box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+}
+.setting_user_container {
+  border-bottom: 1px solid lightgray;
+}
+.profile_settings .setting_user {
+  display: flex;
+  width: 100%;
+  gap: 10px;
+  align-items: center;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+.profile_settings .setting_user:hover {
+  background: #c1c1c2;
+}
+.account_settings .profile_settings .setting_user img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+}
+.profile_settings .setting_user h4 {
+  font-size: 18px;
+  font-weight: 500;
+  color: black;
+}
+
+.pages_settings {
+  border-bottom: 1px solid lightgray;
+}
+.page_user {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: 0.2 s ease-in-out;
+}
+.page_user:hover {
+  background: #c1c1c2;
+}
+.profile_settings .pages_settings .page_user img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+}
+.page_user h4 {
+  font-size: 18px;
+  font-weight: 500;
+  color: black;
+}
+.profile_settings button {
+  border: none;
+  outline: none;
+  background: #e2e5e9;
+  margin-top: 10px;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  border-radius: 5px;
+}
+.profile_settings button h6 {
+  font-size: 12px;
+  font-weight: 500;
+}
+.profile_settings button:hover {
+  background: #dadbdb;
+}
+
+.fb_settings li a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+  border-radius: 5px;
+}
+.fb_settings li a:hover {
+  background: #c1c1c2;
+}
+.settings_icon_container {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.fb_setting_icon {
+  height: 24px;
+  width: 24px;
+  border-radius: 50%;
+  background: #e2e5e9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+}
+.fb_setting_icon i {
+  font-size: 17px;
+}
+.settings_icon_container h5 {
+  font-weight: 600;
+  color: #111111;
+}
+.fb_setting a > i {
+  color: #767c83;
+  font-size: 18px;
+}
+.account_settings > h6 {
+  font-size: 10px;
+  font-weight: normal;
+  padding: 8px;
+}
+.setting_toggle:hover .account_settings {
+  visibility: visible;
+}
+/* account settings options ends */
+
 /* main section stars */
 
 /* left sidebar starts */
@@ -277,6 +448,9 @@ ul {
   overflow: auto;
   left: 20%;
   top: 50px;
+}
+.main_container_wrap::-webkit-scrollbar {
+  width: 0px;
 }
 .main_content {
   width: 90%;
